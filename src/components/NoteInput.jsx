@@ -14,14 +14,32 @@ const NoteInput = ({ addNote }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <input
+      <textarea
         className="note-input__body"
         type="text"
         placeholder="Tulis catatanmu"
         value={body}
         onChange={(e) => setBody(e.target.value)}
       />
-      <button onClick={() => {addNote(title, body); console.log(title); console.log(body);}}>Buat</button>
+      <button
+        onClick={() => {
+          if (title && body) {
+            addNote({ title, body });
+            setTitle("");
+            setBody("");
+          } else {
+            if (!title && body) {
+              alert("Title tidak boleh kosong!");
+            } else if (!body && title) {
+              alert("Body tidak boleh kosong!");
+            } else {
+              alert("Title dan body tidak boleh kosong!");
+            }
+          }
+        }}
+      >
+        Buat
+      </button>
     </div>
   );
 };
