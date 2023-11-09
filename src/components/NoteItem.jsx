@@ -1,6 +1,6 @@
 import React from "react";
 
-const NoteItem = ({ id, title, body, createdAt, showFormattedDate, onDelete}) => {
+const NoteItem = ({ id, title, body, createdAt, archived ,showFormattedDate, onDelete, onArchive }) => {
   const formattedDate = showFormattedDate(createdAt);
   return (
     <div className="note-item">
@@ -11,7 +11,7 @@ const NoteItem = ({ id, title, body, createdAt, showFormattedDate, onDelete}) =>
       </div>
       <div className="note-item__action">
         <button onClick={() => onDelete(id)} className="note-item__delete-button">Delete</button>
-        <button className="note-item__archive-button">Arsipkan</button>
+        <button onClick={() => onArchive(id)} className="note-item__archive-button">Arsipkan</button>
       </div>
     </div>
   );
