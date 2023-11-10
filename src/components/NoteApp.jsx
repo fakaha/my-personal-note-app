@@ -29,7 +29,6 @@ class NoteApp extends React.Component {
         }
         return note;
       });
-
       return { notes: updatedNotes };
     });
   }

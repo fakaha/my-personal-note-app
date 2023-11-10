@@ -8,7 +8,7 @@ const NoteArchive = ({ notes, showFormattedDate, onDelete, onArchive }) => {
 
       <div className="notes-list">
         {notes.filter((note) => note.archived).length === 0 ? (
-          <p>No data</p>
+          <p>Tidak ada arsip catatan</p>
         ) : (
           notes
             .filter((note) => note.archived)
